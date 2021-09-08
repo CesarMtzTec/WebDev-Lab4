@@ -153,12 +153,22 @@ public class ProductController {
 		return responseEntity;
 	}
 	
+    /**
+     * Exception handler for ConstraintViolation
+     * @param cve Constraint Violation Exception object.
+     * @return status 400
+     */
     @ExceptionHandler(ConstraintViolationException.class)
     public ResponseEntity<String> onConstraintViolationException(final ConstraintViolationException cve) {
     	log.error("[Controller]: Invalid parameter", cve);
         return new ResponseEntity<>(cve.getMessage(), HttpStatus.BAD_REQUEST);
     }
 
+    /**
+     * Exception handler for Method Argument Not Valid
+     * @param manve Method Argument Not Valid Exception object.
+     * @return status 400
+     */
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<String> onMethodArgumentNotValidException(final MethodArgumentNotValidException manve) {
     	log.error("[Controller]: Invalid input", manve);

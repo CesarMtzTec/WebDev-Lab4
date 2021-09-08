@@ -10,6 +10,8 @@ import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
 /**
+ * Class that validates the Color of a Product.
+ * Valid colors: black, red, blue, yellow, green, white
  * @author Cesar
  *
  */
