@@ -10,6 +10,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Min;
 
 import mx.tec.web.lab.validation.ValidSize;
+import mx.tec.web.lab.validation.ValidColor;
 
 /**
  * Sku Value Object to store the SKU attributtes
@@ -18,6 +19,7 @@ import mx.tec.web.lab.validation.ValidSize;
  */
 public class SkuVO {
 	private long id;
+	@ValidColor
 	@NotBlank(message = "Color is mandatory")
 	private String color;
 	@ValidSize
