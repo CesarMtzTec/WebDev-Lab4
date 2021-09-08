@@ -7,6 +7,7 @@
 package mx.tec.web.lab.vo;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Min;
 
 import mx.tec.web.lab.validation.ValidSize;
 
@@ -22,11 +23,20 @@ public class SkuVO {
 	@ValidSize
 	@NotBlank(message = "Size is mandatory")
 	private String size;
+	@Min(0)
+	@NotBlank(message = "List price is mandatory")
 	private double listPrice;
+	@Min(0)
+	@NotBlank(message = "Sale price is mandatory")
 	private double salePrice;
+	@Min(0)
+	@NotBlank(message = "Quantity on hand is mandatory")
 	private long quantityOnHand;
+	@NotBlank(message = "Small image url is mandatory")
 	private String smallImageUrl;
+	@NotBlank(message = "Medium image url is mandatory")
 	private String mediumImageUrl;
+	@NotBlank(message = "Large image url is mandatory")
 	private String largeImageUrl;
 
 	/**
